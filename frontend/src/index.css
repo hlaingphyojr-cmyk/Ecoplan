@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --min-bg: #faf9f7;
+  --min-surface: #ffffff;
+  --min-border: #e4e4e0;
+  --min-border-strong: #d4d4cf;
+  --min-text: #1c1f1c;
+  --min-text-soft: #5f655f;
+  --min-accent: #059669;
+  --min-accent-strong: #047857;
+  --min-accent-soft: #e6f4ec;
+  --min-track: #ececea;
+}
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  @apply bg-[#faf9f7] text-[#1c1f1c] antialiased;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- minimal flat primitives ---- */
+
+.card {
+  background-color: var(--min-surface);
+  border: 1px solid var(--min-border);
+  border-radius: 1rem;
+}
+
+.btn,
+.btn-primary,
+.btn-dark,
+.btn-ghost,
+.btn-danger {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-xl text-sm font-semibold px-4 py-2 transition-all;
+}
+.btn-primary:hover,
+.btn-dark:hover,
+.btn-ghost:hover,
+.btn-danger:hover {
+  filter: brightness(0.97);
+}
+.btn-primary:active,
+.btn-dark:active,
+.btn-ghost:active,
+.btn-danger:active {
+  transform: translateY(1px);
+}
+.btn-primary:disabled,
+.btn-dark:disabled,
+.btn-ghost:disabled,
+.btn-danger:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--min-accent);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--min-accent-strong);
+}
+.btn-dark {
+  background-color: var(--min-text);
+  color: #ffffff;
+}
+.btn-ghost {
+  background-color: var(--min-surface);
+  border: 1px solid var(--min-border-strong);
+  color: var(--min-text);
+}
+.btn-ghost:hover {
+  border-color: var(--min-accent);
+  color: var(--min-accent);
+}
+.btn-danger {
+  background-color: var(--min-surface);
+  border: 1px solid #f0c4c4;
+  color: #b5432f;
+}
+.btn-danger:hover {
+  background-color: #fdf3f3;
+}
+
+.input {
+  @apply rounded-xl px-3 py-2 text-sm placeholder-[#a8aca8] focus:outline-none transition-all;
+  background-color: var(--min-surface);
+  border: 1px solid var(--min-border-strong);
+  color: var(--min-text);
+}
+.input:focus {
+  border-color: var(--min-accent);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.chip {
+  @apply inline-flex items-center gap-1 rounded-full text-xs font-semibold uppercase tracking-wide px-2.5 py-0.5;
+  background-color: var(--min-bg);
+  border: 1px solid var(--min-border);
+  color: var(--min-text);
+}
+
+.neu-raised {
+  background-color: var(--min-surface);
+  border: 1px solid var(--min-border);
+}
+
+.neu-inset {
+  background-color: #f2f2f0;
+  border: 1px solid var(--min-border);
+}
+
+/* thin scrollbar for chat */
+.nice-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.nice-scroll::-webkit-scrollbar-thumb {
+  background: var(--min-border-strong);
+  border-radius: 9999px;
+}
